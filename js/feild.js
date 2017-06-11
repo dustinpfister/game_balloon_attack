@@ -14,15 +14,15 @@ var Feild = (function () {
 
         maxW : 320,
         guns : [],
+        shots : [],
         ships : [],
         maxShips : 1
 
     };
 
-
-
     var Shot = function (options) {
 
+        this.owner = options.owner || 'player';
         this.age = 0;
         this.maxAge = 70;
         this.dead = false;
@@ -92,26 +92,24 @@ var Feild = (function () {
     api.update = function () {
 
         // update guns
-        this.guns.forEach(function (gun) {
+        this.guns.forEach(function (gun) {});
 
-            gun.shots.forEach(function (shot) {
+        this.shots.forEach(function (shot) {
 
-                shot.update();
+            shot.update();
 
-            });
+        });
 
-            var i = gun.shots.length;
-            while (i--) {
+        var i = this.shots.length;
+        while (i--) {
 
-                if (gun.shots[i].dead) {
+            if (this.shots[i].dead) {
 
-                    gun.shots.splice(i, 1);
-
-                }
+                this.shots.splice(i, 1);
 
             }
 
-        });
+        }
 
         // update ships
         this.ships.forEach(function (ship) {
@@ -194,7 +192,7 @@ var Feild = (function () {
 
             var heading = Math.atan2(y - gun.y, x - gun.x);
 
-            gun.shots.push(new Shot({
+            this.shots.push(new Shot({
 
                     heading : heading,
                     x : gun.x,
@@ -290,13 +288,13 @@ var Canvas = (function () {
                 ctx.fillStyle = '#af0000';
                 ctx.fillRect(gun.x, gun.y, gun.size, gun.size);
 
-                // draw shots
-                gun.shots.forEach(function (shot) {
+            });
 
-                    ctx.fillStyle = '#ff0000';
-                    ctx.fillRect(shot.x, shot.y, shot.size, shot.size);
+            // draw shots
+            Feild.shots.forEach(function (shot) {
 
-                });
+                ctx.fillStyle = '#ff0000';
+                ctx.fillRect(shot.x, shot.y, shot.size, shot.size);
 
             });
 
