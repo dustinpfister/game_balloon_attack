@@ -21,6 +21,14 @@ var Shot = function (options) {
     this.x = options.x || 0;
     this.y = options.y || 0;
 
+    this.sprite = game.add.sprite(this.x, this.y, 'start_sheet', 1);
+
+};
+
+Shot.prototype.onKill = function () {
+
+    this.sprite.kill();
+
 };
 
 Shot.prototype.update = function () {
@@ -54,6 +62,8 @@ Shot.prototype.update = function () {
 
         this.x += Math.cos(this.heading) * this.delta;
         this.y += Math.sin(this.heading) * this.delta;
+		this.sprite.x = this.x;
+		this.sprite.y = this.y;
 
         this.age += 1;
         if (this.age >= this.maxAge) {

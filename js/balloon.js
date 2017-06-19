@@ -18,8 +18,8 @@ var Balloon = (function () {
 
                 console.log(Feild);
 
-                sprite_pg.x = Feild.guns[0].x
-                    sprite_pg.y = Feild.guns[0].y
+                sprite_pg.x = Feild.guns[0].x;
+                sprite_pg.y = Feild.guns[0].y;
 
             },
 
@@ -32,7 +32,7 @@ var Balloon = (function () {
 
                     console.log(Feild.shots.length);
 
-                    Feild.shoot(point.x, point.y)
+                    Feild.shoot(point.x, point.y);
 
                 }
 

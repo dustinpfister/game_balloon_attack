@@ -45,6 +45,7 @@ var Feild = (function () {
 
             if (this.shots[i].dead) {
 
+                this.shots[i].onKill();
                 this.shots.splice(i, 1);
 
             }
