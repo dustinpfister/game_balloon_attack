@@ -90,6 +90,8 @@ var Feild = (function () {
 
             }));
 
+        this.ships = [];
+
         // setup ship
         this.ships.push(new Ship({}));
 
@@ -171,5 +173,3 @@ var Feild = (function () {
 
 }
     ());
-
-

@@ -16,6 +16,8 @@ var Load = (function () {
             }, this);
             game.load.onLoadComplete.add(function () {}, this);
 
+			game.load.spritesheet('start_sheet', 'img/start_sheet.png',32,32);
+			
         },
 
         create : function () {
