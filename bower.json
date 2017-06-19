@@ -1,0 +1,26 @@
+{
+  "name": "game_balloon_attack",
+  "homepage": "https://github.com/dustinpfister/game_balloon_attack",
+  "authors": [
+    "dustinpfister <dustin.pfister@gmail.com>"
+  ],
+  "description": "ballon attack defense game",
+  "main": "index.html",
+  "keywords": [
+    "game",
+    "defense",
+    "ballon"
+  ],
+  "license": "GPL-3.0",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "phaser": "^2.6.2"
+  }
+}

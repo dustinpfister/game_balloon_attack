@@ -1,9 +1,8 @@
 var Feild = (function () {
 
-
-
     var api = {
 
+        hp : 10,
         maxW : 320,
         guns : [],
         shots : [],
@@ -11,8 +10,6 @@ var Feild = (function () {
         maxShips : 1
 
     };
-
-
 
     var Gun = function (options) {
 
@@ -28,14 +25,16 @@ var Feild = (function () {
     api.update = function () {
 
         // update guns
-        this.guns.forEach(function (gun) {});
+        //this.guns.forEach(function (gun) {});
 
+        // update shots
         this.shots.forEach(function (shot) {
 
             shot.update();
 
         });
 
+        // purge old shots
         var i = this.shots.length;
         while (i--) {
 

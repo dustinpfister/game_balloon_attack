@@ -22,6 +22,8 @@ Ship.prototype.update = function () {
 
     } else {
 
+	    Feild.hp -= 1;
+	
         this.dead = true;
 
     }
