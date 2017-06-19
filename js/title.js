@@ -10,6 +10,11 @@ var Title = (function () {
 
             console.log('title:');
 
+        },
+
+        update : function () {
+
+
         }
 
     };

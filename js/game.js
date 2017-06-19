@@ -20,6 +20,8 @@ var game = (function () {
 
             // just add and start the load state
             game.state.add('load', Load);
+
+
             game.state.start('load');
 
         }
