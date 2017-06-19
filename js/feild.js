@@ -7,8 +7,10 @@ var Feild = (function () {
         guns : [],
 
         shots : [],
-        
-		
+        lastShot : new Date(),
+        shotDelay : 500,
+        maxShots : 3,
+
         ships : [],
         maxShips : 1
 
@@ -124,9 +126,10 @@ var Feild = (function () {
     api.shoot = function (x, y) {
 
         // just get the first on for now
-        var gun = this.getPlayerControl()[0];
+        var gun = this.getPlayerControl()[0],
+        now = new Date();
 
-        if (gun.shots.length < gun.maxShots) {
+        if (this.shots.length < this.maxShots && now - this.lastShot > this.shotDelay) {
 
             console.log('okay good');
 
@@ -138,7 +141,9 @@ var Feild = (function () {
                     x : gun.x,
                     y : gun.y
 
-                }))
+                }));
+
+            this.lastShot = new Date();
 
         } else {
 
