@@ -25,12 +25,18 @@ var Balloon = (function () {
 
             update : function () {
 
+                var point = game.input.activePointer;
+
                 // this is how you can use activePointer
-                if (game.input.activePointer.isDown) {
+                if (point.isDown) {
 
                     console.log(Feild.shots.length);
 
+                    Feild.shoot(point.x, point.y)
+
                 }
+
+                Feild.update();
 
             }
 

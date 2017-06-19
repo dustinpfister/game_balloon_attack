@@ -5,7 +5,10 @@ var Feild = (function () {
         hp : 10,
         maxW : 320,
         guns : [],
+
         shots : [],
+        
+		
         ships : [],
         maxShips : 1
 
