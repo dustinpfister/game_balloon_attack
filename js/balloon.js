@@ -1,6 +1,23 @@
 var Balloon = (function () {
 
     return {
+		
+		
+		// the actual field game state
+		feild : {
+			
+			create : {
+				
+				
+			},
+			
+			update : {
+				
+				
+			}
+			
+			
+		},
 
         title : {
 

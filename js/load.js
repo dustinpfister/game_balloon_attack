@@ -21,6 +21,7 @@ var Load = (function () {
         create : function () {
 
             game.state.add('title', Balloon.title);
+            game.state.add('feild', Balloon.feild);
             game.state.start('title');
 
         }
