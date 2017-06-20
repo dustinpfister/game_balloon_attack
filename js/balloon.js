@@ -1,7 +1,6 @@
 var Balloon = (function () {
 
-    var sprite_pg,
-    shots = [];
+    var sprite_pg;
 
     return {
 

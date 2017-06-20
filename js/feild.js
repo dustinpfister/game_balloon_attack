@@ -20,8 +20,8 @@ var Feild = (function () {
 
         this.playerControl = options.playerControl || false;
         this.size = options.size || 32;
-        this.x = options.x || 310 - this.size;
-        this.y = options.y || 230 - this.size;
+        this.x = options.x || 610 - this.size;
+        this.y = options.y || 430 - this.size;
         this.shots = [];
         this.maxShots = 3;
 
@@ -75,6 +75,8 @@ var Feild = (function () {
         while (i--) {
 
             if (this.ships[i].dead) {
+
+                this.ships[i].onKill();
 
                 this.ships.splice(i, 1);
 
@@ -176,7 +178,7 @@ var Feild = (function () {
 
     };
 
-    api.start();
+    //api.start();
 
     return api;
 

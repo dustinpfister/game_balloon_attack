@@ -11,6 +11,14 @@ var Ship = function (options) {
     this.attack = false;
     this.dead = false;
 
+    this.sprite = game.add.sprite(this.x, this.y, 'start_sheet', 1);
+
+};
+
+Ship.prototype.onKill = function () {
+
+    this.sprite.kill();
+
 };
 
 // update a ships data
@@ -22,8 +30,8 @@ Ship.prototype.update = function () {
 
     } else {
 
-	    Feild.hp -= 1;
-	
+        Feild.hp -= 1;
+
         this.dead = true;
 
     }
@@ -34,5 +42,8 @@ Ship.prototype.update = function () {
         this.attack = true;
 
     }
+
+    this.sprite.x = this.x;
+    this.sprite.y = this.y;
 
 };
