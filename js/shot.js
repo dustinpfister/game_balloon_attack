@@ -11,9 +11,11 @@ var boundingBox = function (x1, y1, w1, h1, x2, y2, w2, h2) {
 var Shot = function (options) {
 
     this.owner = options.owner || 'player';
+
     this.age = 0;
-    this.maxAge = 70;
+    this.maxAge = 100;
     this.dead = false;
+
     this.size = 5;
     this.delta = 5; // px per tick
 
@@ -62,8 +64,8 @@ Shot.prototype.update = function () {
 
         this.x += Math.cos(this.heading) * this.delta;
         this.y += Math.sin(this.heading) * this.delta;
-		this.sprite.x = this.x;
-		this.sprite.y = this.y;
+        this.sprite.x = this.x;
+        this.sprite.y = this.y;
 
         this.age += 1;
         if (this.age >= this.maxAge) {

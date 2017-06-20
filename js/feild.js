@@ -3,7 +3,7 @@ var Feild = (function () {
     var api = {
 
         hp : 10,
-        maxW : 320,
+        maxW : 640,
         guns : [],
 
         shots : [],
